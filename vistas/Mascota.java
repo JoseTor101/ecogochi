@@ -2,11 +2,13 @@ package vistas;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Mascota extends JFrame {
-    public static int salud = 0;
-    public static int sueno = 0;
-    public static int hambre= 0;
+    public static int salud = 100;
+    public static int sueno = 100;
+    public static int hambre= 100;
     public static String riesgo = "vulnerable";
 
     public JPanel panel = new JPanel();
@@ -123,7 +125,27 @@ public class Mascota extends JFrame {
             }
         };
         takeCare.addActionListener(takeCareG);
+        
+        Timer timer = new Timer();
+        TimerTask t1 = new TimerTask() {
+            public void run(){
+                if(salud != 0){
+                    salud -= 1;
+                } 
+                if(hambre != 0){
+                    hambre -= 5;
+                } 
+                if(sueno != 0){
+                    sueno -= 2;
+                } 
+                sleep.setText("Sueño: "+sueno+"%");
+                health.setText("Salud: "+salud+"%");
+                hunger.setText("Hambre: "+hambre+"%");
+            }
+        };
+        timer.schedule(t1, 0, 12000);
     }
+    
     
 
 }

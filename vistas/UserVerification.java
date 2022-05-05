@@ -97,7 +97,6 @@ public class UserVerification extends JFrame {
             if (persona[i].getCorreo().equals(correo)) {
                 if (persona[i].getContrasena().equals(contraseña)) {
                     Usuario v1 = new Usuario();
-                    System.out.print(i);
                     v1.setVisible(true);
                     n = 1;
                     break;

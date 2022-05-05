@@ -74,7 +74,7 @@ public class Cuidar extends JFrame {
         panel.add(buttonHunger);
         
         JLabel sleep= new JLabel("Sueño:"+Mascota.sueno+"%", SwingConstants.CENTER);
-        sleep.setBounds( 370,250,80,20);
+        sleep.setBounds( 370,250,90,20);
         sleep.setFont(new Font("arial", Font.BOLD,14));
         sleep.setOpaque(true);
         panel.add(sleep); 
@@ -106,7 +106,7 @@ public class Cuidar extends JFrame {
                 Cuidar v1 = new Cuidar();
                 v1.setVisible(true);
                 dispose();
-                if (Mascota.salud <100) {
+                if (Mascota.salud <95) {
                     Mascota.salud += 5;
                 } 
             }
@@ -132,7 +132,7 @@ public class Cuidar extends JFrame {
                 Cuidar v1 = new Cuidar();
                 v1.setVisible(true);
                 dispose();
-                if (Mascota.sueno<100) {
+                if (Mascota.sueno<98) {
                     Mascota.sueno += 5;
                 } 
             }
