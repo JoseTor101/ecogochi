@@ -46,13 +46,13 @@ public class Noticias extends JFrame {
         noticia3.setFont(new Font("arial", Font.BOLD, 17));
         panel.add(noticia3);
 
-        JButton noticia4= new JButton("Lorem ipsum");
+        JButton noticia4= new JButton("No queda más tiempo");
         noticia4.setBounds(5,220,475,50);
         noticia4.setBackground(Color.green);
         noticia4.setFont(new Font("arial", Font.BOLD, 17));
         panel.add(noticia4);
 
-        JButton noticia5= new JButton("Lorem ipsum");
+        JButton noticia5= new JButton("Calor mundial");
         noticia5.setBounds(5,280,475,50);
         noticia5.setBackground(Color.decode("#458bc6"));
         noticia5.setFont(new Font("arial", Font.BOLD, 17));

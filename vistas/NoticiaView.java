@@ -19,7 +19,7 @@ public class NoticiaView extends JFrame {
         setIconImage(img.getImage());
         this.getContentPane().add(panel); 
        
-        JLabel title = new JLabel("Titulo de la noticia", SwingConstants.CENTER);
+        JLabel title = new JLabel("Comunidad ecoamigable", SwingConstants.CENTER);
         title.setBounds( 90,10,300,30);
         title.setFont(new Font("arial", Font.BOLD,20));
         panel.add(title); 
@@ -30,13 +30,13 @@ public class NoticiaView extends JFrame {
     }
     private void openNews(){
 
-        JLabel autor= new JLabel("Nombre del autor", SwingConstants.CENTER);
+        JLabel autor= new JLabel("Pedro Sanchez", SwingConstants.CENTER);
         autor.setBounds( 100,40,300,50);
         autor.setFont(new Font("arial", Font.BOLD,14));
         panel.add(autor); 
 
 
-        JLabel fecha= new JLabel("Fecha", SwingConstants.CENTER);
+        JLabel fecha= new JLabel("10/02/2021", SwingConstants.CENTER);
         fecha.setBounds( 100,90,300,50);
         fecha.setFont(new Font("arial", Font.BOLD,14));
         panel.add(fecha); 

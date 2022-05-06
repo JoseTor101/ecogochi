@@ -7,8 +7,8 @@ import javax.swing.*;
 import perfiles.Personas;
 
 public class Usuario extends JFrame {
-
-    private int i;
+    public static boolean recargar = false;
+    private int i ;
     public JPanel panel = new JPanel();
 
     public Usuario() {
@@ -38,16 +38,20 @@ public class Usuario extends JFrame {
         persona[0] = new Personas("Ricardo", "tuki", "ricardogandica@hotmail.com");
         persona[1] = new Personas("Jose", "retuki", "correo");
 
-        JLabel name = new JLabel("Nombre: " + getPe() + persona[getPe()].getNombre(), SwingConstants.CENTER);
+        JLabel name = new JLabel("Nombre: josetor101");
         name.setBounds(30, 40, 300, 30);
         name.setFont(new Font("arial", Font.BOLD, 14));
         panel.add(name);
 
-        JLabel points = new JLabel("Puntos: " + persona[getPe()].getPuntos(), SwingConstants.CENTER);
-        points.setBounds(28, 70, 300, 30);
+        JLabel points = new JLabel();
+        points.setText("Puntos: "+Personas.puntos);
+        points.setBounds(30, 70, 300, 30);
         points.setFont(new Font("arial", Font.BOLD, 14));
         panel.add(points);
 
+        if(recargar){
+            points.setText("Puntos: "+Personas.puntos);
+        }
         JButton pet = new JButton("Mascota");
         pet.setBounds(50, 190, 170, 50);
         pet.setBackground(Color.decode("#dbeddc"));

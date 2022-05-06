@@ -125,6 +125,16 @@ public class Mascota extends JFrame {
             }
         };
         takeCare.addActionListener(takeCareG);
+
+        ActionListener unlock1 = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ae){ 
+                Desbloquear v1 = new Desbloquear();
+                v1.setVisible(true);
+                dispose();
+            }
+        };
+        unlock.addActionListener(unlock1);
         
         Timer timer = new Timer();
         TimerTask t1 = new TimerTask() {
@@ -143,7 +153,7 @@ public class Mascota extends JFrame {
                 hunger.setText("Hambre: "+hambre+"%");
             }
         };
-        timer.schedule(t1, 0, 12000);
+        timer.schedule(t1, 0, 10000);
     }
     
     

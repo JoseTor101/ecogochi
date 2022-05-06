@@ -4,9 +4,7 @@ import java.awt.event.*;
 import java.lang.reflect.GenericArrayType;
 import java.awt.*;
 import javax.swing.*;
-
 import perfiles.Personas;
-import vistas.Usuario;
 
 public class UserVerification extends JFrame {
 
@@ -44,7 +42,7 @@ public class UserVerification extends JFrame {
         // System.out.println("Ingresado: "+text1.getText());
         panel.add(mail);
 
-        JTextField password = new JTextField("retuki");
+        JTextField password = new JTextField("contraseña");
         password.setBounds(110, 90, 250, 30);
         // System.out.println("Ingresado: "+text1.getText());
         panel.add(password);
@@ -56,19 +54,17 @@ public class UserVerification extends JFrame {
         panel.add(send);
 
         // Acciones
-        if (mail != null && password != null) {
-
             ActionListener signA = new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent ae) {
-                    String correo = mail.getText().trim();
-                    String contraseña = password.getText().trim();
-                    VerificarUsuario(x, persona, contraseña, correo);
+                    Usuario v1 = new Usuario();
+                    v1.setVisible(true);
                     dispose();
                 }
             };
             send.addActionListener(signA);
-        }
+
+        
         JButton home = new JButton();
         home.setBounds(5, 5, 15, 15);
         ImageIcon house = new ImageIcon("img/home.png");
@@ -88,25 +84,6 @@ public class UserVerification extends JFrame {
         // Verificar que no estén vacios los campos
         // Ir a Usuario.java
 
-    }
-
-    public static void VerificarUsuario(int x, Personas[] persona, String contraseña, String correo) {
-        int n = 0;
-
-        for (int i = 0; i <= x - 1; i++) {
-            if (persona[i].getCorreo().equals(correo)) {
-                if (persona[i].getContrasena().equals(contraseña)) {
-                    Usuario v1 = new Usuario();
-                    v1.setVisible(true);
-                    n = 1;
-                    break;
-                }
-            }
-        }
-        if (n == 0) {
-            System.out.println("No se pudo iniciar sesión, reinicie para volver a intentar");
-
-        }
     }
 
 }

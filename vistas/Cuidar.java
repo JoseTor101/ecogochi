@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Cuidar extends JFrame {
-    public JPanel panel = new JPanel();
+    public static JPanel panel = new JPanel();
 
     public Cuidar(){
         panel.setLayout(null);
@@ -103,12 +103,10 @@ public class Cuidar extends JFrame {
         ActionListener health1 = new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ae){ 
-                Cuidar v1 = new Cuidar();
-                v1.setVisible(true);
-                dispose();
                 if (Mascota.salud <95) {
                     Mascota.salud += 5;
                 } 
+                health.setText("Salud: "+Mascota.salud+"%");
             }
         };
         buttonHealth.addActionListener(health1);
@@ -116,12 +114,10 @@ public class Cuidar extends JFrame {
         ActionListener hunger1 = new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ae){ 
-                Cuidar v1 = new Cuidar();
-                v1.setVisible(true);
-                dispose();
                 if (Mascota.hambre <100) {
                     Mascota.hambre += 5;
                 } 
+                hunger.setText("Hambre:"+Mascota.hambre+"%");
             }
         };
         buttonHunger.addActionListener(hunger1);
@@ -129,12 +125,10 @@ public class Cuidar extends JFrame {
         ActionListener sleep1 = new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ae){ 
-                Cuidar v1 = new Cuidar();
-                v1.setVisible(true);
-                dispose();
-                if (Mascota.sueno<98) {
-                    Mascota.sueno += 5;
+                if (Mascota.sueno<96) {
+                    Mascota.sueno += 4;
                 } 
+                sleep.setText("Sueño:"+Mascota.sueno+"%");
             }
         };
         buttonSleep.addActionListener(sleep1);

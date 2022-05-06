@@ -4,6 +4,8 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+import perfiles.Personas;
+
 
 
 public class Tareas extends JFrame {
@@ -77,6 +79,17 @@ public class Tareas extends JFrame {
         home.setIcon(new ImageIcon(house.getImage().getScaledInstance(10, 10, Image.SCALE_SMOOTH)));
         panel.add(home);
         
+                ActionListener point1 = new ActionListener(){
+                    @Override
+                    public void actionPerformed(ActionEvent ae){ 
+                        Personas.puntos += 5;
+                        Usuario.recargar = true;
+                        Usuario v1 = new Usuario();
+                        v1.setVisible(true);
+                        dispose();
+                    }
+                };
+                waterB.addActionListener(point1);
                 ActionListener goHome = new ActionListener(){
                     @Override
                     public void actionPerformed(ActionEvent ae){ 

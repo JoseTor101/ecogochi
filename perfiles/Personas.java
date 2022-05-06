@@ -6,7 +6,7 @@ public class Personas {
     private String contrasena;
     private String correo;
     private int meta;
-    private int puntos;
+    public static int puntos;
 
     public Personas() {
 
@@ -18,7 +18,7 @@ public class Personas {
         setContrasena(contra);
         setCorreo(correo);
         setMeta(0);
-        setPuntos(0);
+        setPuntos(120);
 
     }
 
@@ -70,8 +70,8 @@ public class Personas {
         return puntos;
     }
 
-    public void setPuntos(int puntos) {
-        this.puntos = puntos;
+    public void setPuntos(int punts) {
+        puntos = punts;
     }
 
     public void desbloquearMascotas() {

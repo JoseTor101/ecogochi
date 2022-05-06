@@ -64,16 +64,25 @@ public class Registro extends JFrame {
 
         // Verificar que no estén vacios los campos
         // Volver a la pagina inicial
-        if (mail != null && password != null && name != null) {
-
             ActionListener log1 = new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent ae) {
-                    String nombre = name.getText().trim();
-                    String correo = mail.getText().trim();
-                    String contraseña = password.getText().trim();
-                    Personas[] persona = new Personas[100];
-                    persona[3] = new Personas(nombre, contraseña, correo);
+                    // String nombre = name.getText().trim();
+                    // String correo = mail.getText().trim();
+                    // String contraseña = password.getText().trim();
+                    // Personas[] persona = new Personas[100];
+                    // persona[3] = new Personas(nombre, contraseña, correo);
+
+                    Home v1 = new Home();
+                    v1.setVisible(true);
+                    dispose();
+
+                }
+            };
+            log.addActionListener(log1);
+            ActionListener send1 = new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent ae) {
 
                     Usuario v1 = new Usuario();
                     v1.setVisible(true);
@@ -81,8 +90,8 @@ public class Registro extends JFrame {
 
                 }
             };
-            log.addActionListener(log1);
-        }
+            send.addActionListener(send1);
+        
     }
 
 }
